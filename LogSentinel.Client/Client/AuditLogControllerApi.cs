@@ -25,6 +25,8 @@ namespace IO.Swagger.Api
     public interface IAuditLogControllerApi : IApiAccessor
     {
         #region Synchronous Operations
+
+
         /// <summary>
         /// Get entry by id
         /// </summary>
@@ -35,7 +37,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>AuditLogEntry</returns>
-        AuditLogEntry GetEntryByIdUsingGET1 (string entryId, string applicationId);
+        AuditLogEntry GetEntryByIdUsingGET1(string entryId, string applicationId);
 
         /// <summary>
         /// Get entry by id
@@ -47,7 +49,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of AuditLogEntry</returns>
-        ApiResponse<AuditLogEntry> GetEntryByIdUsingGET1WithHttpInfo (string entryId, string applicationId);
+        ApiResponse<AuditLogEntry> GetEntryByIdUsingGET1WithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// getHashByEntryId
         /// </summary>
@@ -58,7 +60,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
-        LogResponse GetHashByEntryIdUsingGET1 (string entryId, string applicationId);
+        LogResponse GetHashByEntryIdUsingGET1(string entryId, string applicationId);
 
         /// <summary>
         /// getHashByEntryId
@@ -70,7 +72,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> GetHashByEntryIdUsingGET1WithHttpInfo (string entryId, string applicationId);
+        ApiResponse<LogResponse> GetHashByEntryIdUsingGET1WithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature
         /// </summary>
@@ -90,7 +92,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogAuthActionUsingPOST1 (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        LogResponse LogAuthActionUsingPOST1(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature
@@ -111,7 +113,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogAuthActionUsingPOST1WithHttpInfo (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        ApiResponse<LogResponse> LogAuthActionUsingPOST1WithHttpInfo(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time
         /// </summary>
@@ -122,7 +124,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogBatchUsingPOST1 (List<BatchLogRequestEntry> requestData, string applicationId);
+        LogResponse LogBatchUsingPOST1(List<BatchLogRequestEntry> requestData, string applicationId);
 
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time
@@ -134,7 +136,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogBatchUsingPOST1WithHttpInfo (List<BatchLogRequestEntry> requestData, string applicationId);
+        ApiResponse<LogResponse> LogBatchUsingPOST1WithHttpInfo(List<BatchLogRequestEntry> requestData, string applicationId);
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action
         /// </summary>
@@ -155,7 +157,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogFullUsingPOST1 (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        LogResponse LogFullUsingPOST1(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action
@@ -177,7 +179,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogFullUsingPOST1WithHttpInfo (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        ApiResponse<LogResponse> LogFullUsingPOST1WithHttpInfo(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document
         /// </summary>
@@ -191,7 +193,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogSimpleUsingPOST1 (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
+        LogResponse LogSimpleUsingPOST1(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document
@@ -206,7 +208,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogSimpleUsingPOST1WithHttpInfo (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
+        ApiResponse<LogResponse> LogSimpleUsingPOST1WithHttpInfo(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log an event by a given actor
         /// </summary>
@@ -225,7 +227,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogUsingPOST1 (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        LogResponse LogUsingPOST1(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by a given actor
@@ -245,7 +247,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact
         /// </summary>
@@ -256,7 +258,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
-        Verification VerifyEntryUsingPOST1 (string entryId, string applicationId);
+        Verification VerifyEntryUsingPOST1(string entryId, string applicationId);
 
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact
@@ -268,7 +270,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
-        ApiResponse<Verification> VerifyEntryUsingPOST1WithHttpInfo (string entryId, string applicationId);
+        ApiResponse<Verification> VerifyEntryUsingPOST1WithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact
         /// </summary>
@@ -279,7 +281,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
-        Verification VerifyUsingPOST1 (string hash, string applicationId);
+        Verification VerifyUsingPOST1(string hash, string applicationId);
 
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact
@@ -291,7 +293,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
-        ApiResponse<Verification> VerifyUsingPOST1WithHttpInfo (string hash, string applicationId);
+        ApiResponse<Verification> VerifyUsingPOST1WithHttpInfo(string hash, string applicationId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -304,7 +306,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of AuditLogEntry</returns>
-        System.Threading.Tasks.Task<AuditLogEntry> GetEntryByIdUsingGET1Async (string entryId, string applicationId);
+        System.Threading.Tasks.Task<AuditLogEntry> GetEntryByIdUsingGET1Async(string entryId, string applicationId);
 
         /// <summary>
         /// Get entry by id
@@ -316,7 +318,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (AuditLogEntry)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AuditLogEntry>> GetEntryByIdUsingGET1AsyncWithHttpInfo (string entryId, string applicationId);
+        System.Threading.Tasks.Task<ApiResponse<AuditLogEntry>> GetEntryByIdUsingGET1AsyncWithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// getHashByEntryId
         /// </summary>
@@ -327,7 +329,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> GetHashByEntryIdUsingGET1Async (string entryId, string applicationId);
+        System.Threading.Tasks.Task<LogResponse> GetHashByEntryIdUsingGET1Async(string entryId, string applicationId);
 
         /// <summary>
         /// getHashByEntryId
@@ -339,7 +341,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetHashByEntryIdUsingGET1AsyncWithHttpInfo (string entryId, string applicationId);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetHashByEntryIdUsingGET1AsyncWithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature
         /// </summary>
@@ -359,7 +361,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> LogAuthActionUsingPOST1Async (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<LogResponse> LogAuthActionUsingPOST1Async(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature
@@ -380,7 +382,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogAuthActionUsingPOST1AsyncWithHttpInfo (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogAuthActionUsingPOST1AsyncWithHttpInfo(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time
         /// </summary>
@@ -391,7 +393,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> LogBatchUsingPOST1Async (List<BatchLogRequestEntry> requestData, string applicationId);
+        System.Threading.Tasks.Task<LogResponse> LogBatchUsingPOST1Async(List<BatchLogRequestEntry> requestData, string applicationId);
 
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time
@@ -403,7 +405,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogBatchUsingPOST1AsyncWithHttpInfo (List<BatchLogRequestEntry> requestData, string applicationId);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogBatchUsingPOST1AsyncWithHttpInfo(List<BatchLogRequestEntry> requestData, string applicationId);
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action
         /// </summary>
@@ -424,7 +426,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> LogFullUsingPOST1Async (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<LogResponse> LogFullUsingPOST1Async(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action
@@ -446,7 +448,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogFullUsingPOST1AsyncWithHttpInfo (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogFullUsingPOST1AsyncWithHttpInfo(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document
         /// </summary>
@@ -460,7 +462,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> LogSimpleUsingPOST1Async (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<LogResponse> LogSimpleUsingPOST1Async(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document
@@ -475,7 +477,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogSimpleUsingPOST1AsyncWithHttpInfo (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogSimpleUsingPOST1AsyncWithHttpInfo(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Log an event by a given actor
         /// </summary>
@@ -494,7 +496,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> LogUsingPOST1Async (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<LogResponse> LogUsingPOST1Async(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by a given actor
@@ -514,7 +516,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogUsingPOST1AsyncWithHttpInfo (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogUsingPOST1AsyncWithHttpInfo(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact
         /// </summary>
@@ -525,7 +527,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
-        System.Threading.Tasks.Task<Verification> VerifyEntryUsingPOST1Async (string entryId, string applicationId);
+        System.Threading.Tasks.Task<Verification> VerifyEntryUsingPOST1Async(string entryId, string applicationId);
 
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact
@@ -537,7 +539,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyEntryUsingPOST1AsyncWithHttpInfo (string entryId, string applicationId);
+        System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyEntryUsingPOST1AsyncWithHttpInfo(string entryId, string applicationId);
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact
         /// </summary>
@@ -548,7 +550,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
-        System.Threading.Tasks.Task<Verification> VerifyUsingPOST1Async (string hash, string applicationId);
+        System.Threading.Tasks.Task<Verification> VerifyUsingPOST1Async(string hash, string applicationId);
 
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact
@@ -560,7 +562,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyUsingPOST1AsyncWithHttpInfo (string hash, string applicationId);
+        System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyUsingPOST1AsyncWithHttpInfo(string hash, string applicationId);
         #endregion Asynchronous Operations
     }
 
@@ -639,7 +641,7 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -686,12 +688,12 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>AuditLogEntry</returns>
-        public AuditLogEntry GetEntryByIdUsingGET1 (string entryId, string applicationId)
+        public AuditLogEntry GetEntryByIdUsingGET1(string entryId, string applicationId)
         {
-             ApiResponse<AuditLogEntry> localVarResponse = GetEntryByIdUsingGET1WithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<AuditLogEntry> localVarResponse = GetEntryByIdUsingGET1WithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
         }
-
+        
         /// <summary>
         /// Get entry by id 
         /// </summary>
@@ -699,7 +701,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of AuditLogEntry</returns>
-        public ApiResponse< AuditLogEntry > GetEntryByIdUsingGET1WithHttpInfo (string entryId, string applicationId)
+        public ApiResponse<AuditLogEntry> GetEntryByIdUsingGET1WithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -718,7 +720,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -743,11 +745,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -757,7 +759,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<AuditLogEntry>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AuditLogEntry) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AuditLogEntry)));
+                (AuditLogEntry)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AuditLogEntry)));
         }
 
         /// <summary>
@@ -767,10 +769,10 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of AuditLogEntry</returns>
-        public async System.Threading.Tasks.Task<AuditLogEntry> GetEntryByIdUsingGET1Async (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<AuditLogEntry> GetEntryByIdUsingGET1Async(string entryId, string applicationId)
         {
-             ApiResponse<AuditLogEntry> localVarResponse = await GetEntryByIdUsingGET1AsyncWithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<AuditLogEntry> localVarResponse = await GetEntryByIdUsingGET1AsyncWithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
 
         }
 
@@ -781,7 +783,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (AuditLogEntry)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AuditLogEntry>> GetEntryByIdUsingGET1AsyncWithHttpInfo (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<ApiResponse<AuditLogEntry>> GetEntryByIdUsingGET1AsyncWithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -800,7 +802,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -825,11 +827,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -839,7 +841,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<AuditLogEntry>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AuditLogEntry) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AuditLogEntry)));
+                (AuditLogEntry)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AuditLogEntry)));
         }
 
         /// <summary>
@@ -849,10 +851,10 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse GetHashByEntryIdUsingGET1 (string entryId, string applicationId)
+        public LogResponse GetHashByEntryIdUsingGET1(string entryId, string applicationId)
         {
-             ApiResponse<LogResponse> localVarResponse = GetHashByEntryIdUsingGET1WithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = GetHashByEntryIdUsingGET1WithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -862,7 +864,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > GetHashByEntryIdUsingGET1WithHttpInfo (string entryId, string applicationId)
+        public ApiResponse<LogResponse> GetHashByEntryIdUsingGET1WithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -905,11 +907,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -919,7 +921,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -929,10 +931,10 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> GetHashByEntryIdUsingGET1Async (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<LogResponse> GetHashByEntryIdUsingGET1Async(string entryId, string applicationId)
         {
-             ApiResponse<LogResponse> localVarResponse = await GetHashByEntryIdUsingGET1AsyncWithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await GetHashByEntryIdUsingGET1AsyncWithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
 
         }
 
@@ -943,7 +945,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetHashByEntryIdUsingGET1AsyncWithHttpInfo (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetHashByEntryIdUsingGET1AsyncWithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -986,11 +988,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1000,7 +1002,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1019,10 +1021,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogAuthActionUsingPOST1 (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public LogResponse LogAuthActionUsingPOST1(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = LogAuthActionUsingPOST1WithHttpInfo(actorId, authAction, details, applicationId, signedLoginChallenge, userPublicKey, signature, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = LogAuthActionUsingPOST1WithHttpInfo(actorId, authAction, details, applicationId, signedLoginChallenge, userPublicKey, signature, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1041,7 +1043,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > LogAuthActionUsingPOST1WithHttpInfo (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public ApiResponse<LogResponse> LogAuthActionUsingPOST1WithHttpInfo(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -1066,7 +1068,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1107,11 +1109,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1121,7 +1123,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1140,10 +1142,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> LogAuthActionUsingPOST1Async (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<LogResponse> LogAuthActionUsingPOST1Async(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = await LogAuthActionUsingPOST1AsyncWithHttpInfo(actorId, authAction, details, applicationId, signedLoginChallenge, userPublicKey, signature, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await LogAuthActionUsingPOST1AsyncWithHttpInfo(actorId, authAction, details, applicationId, signedLoginChallenge, userPublicKey, signature, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
 
         }
 
@@ -1163,7 +1165,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogAuthActionUsingPOST1AsyncWithHttpInfo (string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogAuthActionUsingPOST1AsyncWithHttpInfo(string actorId, string authAction, string details, string applicationId, string signedLoginChallenge = null, string userPublicKey = null, string signature = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -1188,7 +1190,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1229,11 +1231,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1243,7 +1245,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1253,10 +1255,10 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogBatchUsingPOST1 (List<BatchLogRequestEntry> requestData, string applicationId)
+        public LogResponse LogBatchUsingPOST1(List<BatchLogRequestEntry> requestData, string applicationId)
         {
-             ApiResponse<LogResponse> localVarResponse = LogBatchUsingPOST1WithHttpInfo(requestData, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = LogBatchUsingPOST1WithHttpInfo(requestData, applicationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1266,7 +1268,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > LogBatchUsingPOST1WithHttpInfo (List<BatchLogRequestEntry> requestData, string applicationId)
+        public ApiResponse<LogResponse> LogBatchUsingPOST1WithHttpInfo(List<BatchLogRequestEntry> requestData, string applicationId)
         {
             // verify the required parameter 'requestData' is set
             if (requestData == null)
@@ -1285,7 +1287,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1317,11 +1319,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1331,7 +1333,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1341,10 +1343,10 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> LogBatchUsingPOST1Async (List<BatchLogRequestEntry> requestData, string applicationId)
+        public async System.Threading.Tasks.Task<LogResponse> LogBatchUsingPOST1Async(List<BatchLogRequestEntry> requestData, string applicationId)
         {
-             ApiResponse<LogResponse> localVarResponse = await LogBatchUsingPOST1AsyncWithHttpInfo(requestData, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await LogBatchUsingPOST1AsyncWithHttpInfo(requestData, applicationId);
+            return localVarResponse.Data;
 
         }
 
@@ -1355,7 +1357,7 @@ namespace IO.Swagger.Api
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogBatchUsingPOST1AsyncWithHttpInfo (List<BatchLogRequestEntry> requestData, string applicationId)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogBatchUsingPOST1AsyncWithHttpInfo(List<BatchLogRequestEntry> requestData, string applicationId)
         {
             // verify the required parameter 'requestData' is set
             if (requestData == null)
@@ -1374,7 +1376,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1406,11 +1408,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1420,7 +1422,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1440,10 +1442,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogFullUsingPOST1 (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public LogResponse LogFullUsingPOST1(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = LogFullUsingPOST1WithHttpInfo(actorId, action, entityType, entityId, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = LogFullUsingPOST1WithHttpInfo(actorId, action, entityType, entityId, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1463,7 +1465,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > LogFullUsingPOST1WithHttpInfo (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public ApiResponse<LogResponse> LogFullUsingPOST1WithHttpInfo(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -1494,7 +1496,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1536,11 +1538,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1550,7 +1552,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1570,10 +1572,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> LogFullUsingPOST1Async (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<LogResponse> LogFullUsingPOST1Async(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = await LogFullUsingPOST1AsyncWithHttpInfo(actorId, action, entityType, entityId, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await LogFullUsingPOST1AsyncWithHttpInfo(actorId, action, entityType, entityId, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
 
         }
 
@@ -1594,7 +1596,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogFullUsingPOST1AsyncWithHttpInfo (string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogFullUsingPOST1AsyncWithHttpInfo(string actorId, string action, string entityType, string entityId, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -1625,7 +1627,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1667,11 +1669,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1681,7 +1683,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1694,10 +1696,10 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogSimpleUsingPOST1 (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
+        public LogResponse LogSimpleUsingPOST1(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = LogSimpleUsingPOST1WithHttpInfo(details, applicationId, signature, auditLogEntryType, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = LogSimpleUsingPOST1WithHttpInfo(details, applicationId, signature, auditLogEntryType, encryptedKeywords);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1710,7 +1712,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > LogSimpleUsingPOST1WithHttpInfo (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
+        public ApiResponse<LogResponse> LogSimpleUsingPOST1WithHttpInfo(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'details' is set
             if (details == null)
@@ -1729,7 +1731,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1764,11 +1766,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1778,7 +1780,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1791,10 +1793,10 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> LogSimpleUsingPOST1Async (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<LogResponse> LogSimpleUsingPOST1Async(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = await LogSimpleUsingPOST1AsyncWithHttpInfo(details, applicationId, signature, auditLogEntryType, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await LogSimpleUsingPOST1AsyncWithHttpInfo(details, applicationId, signature, auditLogEntryType, encryptedKeywords);
+            return localVarResponse.Data;
 
         }
 
@@ -1808,7 +1810,7 @@ namespace IO.Swagger.Api
         /// <param name="auditLogEntryType">The type of the event (optional, default to BUSINESS_LOGIC_ENTRY)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogSimpleUsingPOST1AsyncWithHttpInfo (string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogSimpleUsingPOST1AsyncWithHttpInfo(string details, string applicationId, string signature = null, string auditLogEntryType = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'details' is set
             if (details == null)
@@ -1827,7 +1829,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1862,11 +1864,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1876,7 +1878,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -1894,10 +1896,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogUsingPOST1 (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public LogResponse LogUsingPOST1(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorId, action, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorId, action, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1915,7 +1917,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse< LogResponse > LogUsingPOST1WithHttpInfo (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -1940,7 +1942,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1980,11 +1982,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1994,7 +1996,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -2012,10 +2014,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> LogUsingPOST1Async (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<LogResponse> LogUsingPOST1Async(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-             ApiResponse<LogResponse> localVarResponse = await LogUsingPOST1AsyncWithHttpInfo(actorId, action, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
-             return localVarResponse.Data;
+            ApiResponse<LogResponse> localVarResponse = await LogUsingPOST1AsyncWithHttpInfo(actorId, action, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+            return localVarResponse.Data;
 
         }
 
@@ -2034,7 +2036,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogUsingPOST1AsyncWithHttpInfo (string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LogResponse>> LogUsingPOST1AsyncWithHttpInfo(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
             // verify the required parameter 'actorId' is set
             if (actorId == null)
@@ -2059,7 +2061,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -2099,11 +2101,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2113,7 +2115,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<LogResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
+                (LogResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogResponse)));
         }
 
         /// <summary>
@@ -2123,10 +2125,10 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
-        public Verification VerifyEntryUsingPOST1 (string entryId, string applicationId)
+        public Verification VerifyEntryUsingPOST1(string entryId, string applicationId)
         {
-             ApiResponse<Verification> localVarResponse = VerifyEntryUsingPOST1WithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<Verification> localVarResponse = VerifyEntryUsingPOST1WithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2136,7 +2138,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
-        public ApiResponse< Verification > VerifyEntryUsingPOST1WithHttpInfo (string entryId, string applicationId)
+        public ApiResponse<Verification> VerifyEntryUsingPOST1WithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -2155,7 +2157,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -2180,11 +2182,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2194,7 +2196,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Verification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Verification) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
+                (Verification)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
         /// <summary>
@@ -2204,10 +2206,10 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
-        public async System.Threading.Tasks.Task<Verification> VerifyEntryUsingPOST1Async (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<Verification> VerifyEntryUsingPOST1Async(string entryId, string applicationId)
         {
-             ApiResponse<Verification> localVarResponse = await VerifyEntryUsingPOST1AsyncWithHttpInfo(entryId, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<Verification> localVarResponse = await VerifyEntryUsingPOST1AsyncWithHttpInfo(entryId, applicationId);
+            return localVarResponse.Data;
 
         }
 
@@ -2218,7 +2220,7 @@ namespace IO.Swagger.Api
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyEntryUsingPOST1AsyncWithHttpInfo (string entryId, string applicationId)
+        public async System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyEntryUsingPOST1AsyncWithHttpInfo(string entryId, string applicationId)
         {
             // verify the required parameter 'entryId' is set
             if (entryId == null)
@@ -2237,7 +2239,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -2262,11 +2264,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2276,7 +2278,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Verification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Verification) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
+                (Verification)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
         /// <summary>
@@ -2286,10 +2288,10 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
-        public Verification VerifyUsingPOST1 (string hash, string applicationId)
+        public Verification VerifyUsingPOST1(string hash, string applicationId)
         {
-             ApiResponse<Verification> localVarResponse = VerifyUsingPOST1WithHttpInfo(hash, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<Verification> localVarResponse = VerifyUsingPOST1WithHttpInfo(hash, applicationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2299,7 +2301,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
-        public ApiResponse< Verification > VerifyUsingPOST1WithHttpInfo (string hash, string applicationId)
+        public ApiResponse<Verification> VerifyUsingPOST1WithHttpInfo(string hash, string applicationId)
         {
             // verify the required parameter 'hash' is set
             if (hash == null)
@@ -2318,7 +2320,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -2343,11 +2345,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2357,7 +2359,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Verification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Verification) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
+                (Verification)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
         /// <summary>
@@ -2367,10 +2369,10 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
-        public async System.Threading.Tasks.Task<Verification> VerifyUsingPOST1Async (string hash, string applicationId)
+        public async System.Threading.Tasks.Task<Verification> VerifyUsingPOST1Async(string hash, string applicationId)
         {
-             ApiResponse<Verification> localVarResponse = await VerifyUsingPOST1AsyncWithHttpInfo(hash, applicationId);
-             return localVarResponse.Data;
+            ApiResponse<Verification> localVarResponse = await VerifyUsingPOST1AsyncWithHttpInfo(hash, applicationId);
+            return localVarResponse.Data;
 
         }
 
@@ -2381,7 +2383,7 @@ namespace IO.Swagger.Api
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyUsingPOST1AsyncWithHttpInfo (string hash, string applicationId)
+        public async System.Threading.Tasks.Task<ApiResponse<Verification>> VerifyUsingPOST1AsyncWithHttpInfo(string hash, string applicationId)
         {
             // verify the required parameter 'hash' is set
             if (hash == null)
@@ -2400,7 +2402,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "*/*"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -2425,11 +2427,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2439,8 +2441,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Verification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Verification) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
+                (Verification)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
-
     }
 }

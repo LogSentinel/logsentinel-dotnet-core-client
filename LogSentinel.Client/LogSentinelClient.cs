@@ -2,7 +2,7 @@
 
 namespace LogSentinel.Client
 {
-    class LogSentinelClient
+    public class LogSentinelClient
     {
         private AuditLogControllerApi auditLogActions;
         private HashControllerApi hashActions;

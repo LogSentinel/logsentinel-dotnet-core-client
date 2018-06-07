@@ -1,5 +1,6 @@
-﻿using System;
-using LogSentinel.Client;
+﻿using IO.Swagger.Client;
+using IO.Swagger.Model;
+using System;
 
 namespace LogSentinel.Client.Test
 {
@@ -7,27 +8,21 @@ namespace LogSentinel.Client.Test
     {
         static void Main(string[] args)
         {
-            /*
             LogSentinelClientBuilder builder = LogSentinelClientBuilder
-                .create(applicationId, organizationId, secret);
+                .create("", "", "");
             LogSentinelClient client = builder.build();
 
             try
             {
-                LogResponse result = client.getAuditLogActions().log(
-                    new ActorData(actorId).setActorDisplayName(username).setActorRoles(roles),
-                    new ActionData(details).setAction(action)
+                var result = client.getAuditLogActions().LogUsingPOST1Async("actorId", "action", "details", "appId",
+                    "", "auditLogEntry", "actorDispName", null, null, null
                 );
-                System.out.println(result);
+                Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                System.err.println("Exception when calling AuditLogControllerApi#logAuthAction");
-                e.printStackTrace();
+               Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction");
             }
-            Console.WriteLine("Hello World!");
-
-    */
         }
     }
 }

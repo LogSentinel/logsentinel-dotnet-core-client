@@ -151,6 +151,18 @@ namespace IO.Swagger.Model
         {
             yield break;
         }
+
+        public object setActorDisplayName(string v)
+        {
+            this.ActorDisplayName = v;
+            return this;
+        }
+
+        public object setActorRoles(string v)
+        {
+            this.ActorRoles = new List<string>() { v };
+            return this;
+        }
     }
 
 }

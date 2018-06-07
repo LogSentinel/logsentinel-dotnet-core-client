@@ -9,7 +9,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 
 namespace LogSentinel.Client
 {
-    class LogSentinelClientBuilder
+    public class LogSentinelClientBuilder
     {
 
         private String applicationId;
