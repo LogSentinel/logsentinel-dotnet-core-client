@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
+using LogSentinel.Client;
 
 namespace IO.Swagger.Api
 {
@@ -311,6 +312,11 @@ namespace IO.Swagger.Api
     {
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        private ApiClient apiClient;
+        private BodySerializer bodySerializer;
+        private BodySigner bodySigner;
+        private String contentType;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="HashControllerApi"/> class.
         /// </summary>
@@ -320,6 +326,14 @@ namespace IO.Swagger.Api
             this.Configuration = new Configuration { BasePath = basePath };
 
             ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        public HashControllerApi(ApiClient apiClient, BodySerializer bodySerializer, BodySigner signer, String contentType)
+        {
+            this.apiClient = apiClient;
+            this.bodySerializer = bodySerializer;
+            this.bodySigner = signer;
+            this.contentType = contentType;
         }
 
         /// <summary>

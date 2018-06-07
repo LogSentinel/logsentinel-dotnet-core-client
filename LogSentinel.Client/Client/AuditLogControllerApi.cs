@@ -15,6 +15,7 @@ using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
 using IO.Swagger.Model;
+using LogSentinel.Client;
 
 namespace IO.Swagger.Api
 {
@@ -568,6 +569,13 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class AuditLogControllerApi : IAuditLogControllerApi
     {
+        private ApiClient apiClient;
+        private BodySerializer bodySerializer;
+        private BodySigner bodySigner;
+        private JsonBodySerializer jsonBodySerializer;
+        private String contentType;
+        private EncryptingKeywordExtractor encryptingKeywordExtractor;
+
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
@@ -579,6 +587,17 @@ namespace IO.Swagger.Api
             this.Configuration = new Configuration { BasePath = basePath };
 
             ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        public AuditLogControllerApi(ApiClient apiClient, BodySerializer bodySerializer,
+                             BodySigner bodySigner, String contentType, EncryptingKeywordExtractor encryptingKeywordExtractor)
+        {
+            this.apiClient = apiClient;
+            this.bodySerializer = bodySerializer;
+            this.bodySigner = bodySigner;
+            this.contentType = contentType;
+            this.jsonBodySerializer = new JsonBodySerializer(apiClient.getJSON());
+            this.encryptingKeywordExtractor = encryptingKeywordExtractor;
         }
 
         /// <summary>

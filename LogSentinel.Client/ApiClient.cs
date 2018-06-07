@@ -20,6 +20,8 @@ using System.Net;
 using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
+using LogSentinel.Client.Auth;
+using Newtonsoft.Json.Linq;
 
 namespace IO.Swagger.Client
 {
@@ -28,6 +30,10 @@ namespace IO.Swagger.Client
     /// </summary>
     public partial class ApiClient
     {
+        private Dictionary<String, Authentication> authentications;
+        private Dictionary<String, String> defaultHeaderMap = new Dictionary<string, string>();
+        private JObject json;
+
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
@@ -75,12 +81,59 @@ namespace IO.Swagger.Client
         /// <param name="basePath">The base path.</param>
         public ApiClient(String basePath = "https://api.logsentinel.com")
         {
-           if (String.IsNullOrEmpty(basePath))
+            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
             Configuration = Client.Configuration.Default;
         }
+
+
+        /**
+         * Helper method to set username for the first HTTP basic authentication.
+         *
+         * @param username Username
+         */
+        public void setUsername(String username)
+        {
+            foreach (Authentication auth in authentications.Values)
+            {
+                if (auth is HttpBasicAuth)
+                {
+                    ((HttpBasicAuth)auth).setUsername(username);
+                    return;
+                }
+            }
+        }
+
+        /**
+         * Helper method to set password for the first HTTP basic authentication.
+         *
+         * @param password Password
+         */
+        public void setPassword(String password)
+        {
+            foreach (Authentication auth in authentications.Values)
+            {
+                if (auth is HttpBasicAuth)
+                {
+                    ((HttpBasicAuth)auth).setPassword(password);
+                    return;
+                }
+            }
+        }
+
+        public ApiClient addDefaultHeader(String key, String value)
+        {
+            defaultHeaderMap.Add(key, value);
+            return this;
+        }
+
+        public JObject getJSON()
+        {
+            return json;
+        }
+
 
         /// <summary>
         /// Gets or sets the default API client for making HTTP calls.
@@ -116,23 +169,23 @@ namespace IO.Swagger.Client
             var request = new RestRequest(path, method);
 
             // add path parameter, if any
-            foreach(var param in pathParams)
+            foreach (var param in pathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
             // add header parameter, if any
-            foreach(var param in headerParams)
+            foreach (var param in headerParams)
                 request.AddHeader(param.Key, param.Value);
 
             // add query parameter, if any
-            foreach(var param in queryParams)
+            foreach (var param in queryParams)
                 request.AddQueryParameter(param.Key, param.Value);
 
             // add form parameter, if any
-            foreach(var param in formParams)
+            foreach (var param in formParams)
                 request.AddParameter(param.Key, param.Value);
 
             // add file parameter, if any
-            foreach(var param in fileParams)
+            foreach (var param in fileParams)
             {
                 request.AddFile(param.Value.Name, null, param.Value.FileName, param.Value.ContentType);
             }
@@ -169,7 +222,7 @@ namespace IO.Swagger.Client
                 pathParams, contentType);
 
             // set timeout
-            
+
             RestClient.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
@@ -178,7 +231,7 @@ namespace IO.Swagger.Client
             var response = RestClient.Execute(request);
             InterceptResponse(request, response);
 
-            return (Object) response;
+            return (Object)response;
         }
         /// <summary>
         /// Makes the asynchronous HTTP request.
@@ -246,13 +299,13 @@ namespace IO.Swagger.Client
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTime)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTime)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is DateTimeOffset)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTimeOffset)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTimeOffset)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is IList)
             {
                 var flattenedString = new StringBuilder();
@@ -265,7 +318,7 @@ namespace IO.Swagger.Client
                 return flattenedString.ToString();
             }
             else
-                return Convert.ToString (obj);
+                return Convert.ToString(obj);
         }
 
         /// <summary>
@@ -308,7 +361,7 @@ namespace IO.Swagger.Client
 
             if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
             {
-                return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
+                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
             if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
@@ -427,7 +480,7 @@ namespace IO.Swagger.Client
         /// <returns>Byte array</returns>
         public static byte[] ReadAsBytes(Stream inputStream)
         {
-            byte[] buf = new byte[16*1024];
+            byte[] buf = new byte[16 * 1024];
             using (MemoryStream ms = new MemoryStream())
             {
                 int count;
