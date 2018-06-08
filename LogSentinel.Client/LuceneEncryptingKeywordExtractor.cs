@@ -8,7 +8,7 @@ using System.IO;
 
 namespace LogSentinel.Client
 {
-    class LuceneEncryptingKeywordExtractor : EncryptingKeywordExtractor
+    public class LuceneEncryptingKeywordExtractor : EncryptingKeywordExtractor
     {
         private static Analyzer analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_CURRENT);
 

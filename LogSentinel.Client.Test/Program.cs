@@ -2,6 +2,8 @@
 using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using Org.BouncyCastle.Math;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace LogSentinel.Client.Test
 {
@@ -15,7 +17,10 @@ namespace LogSentinel.Client.Test
 
             LogSentinelClient client = builder.build();
 
-            RsaKeyParameters k = new RsaKeyParameters(true, new BigInteger("11111"), new BigInteger("111"));
+            // RsaKeyParameters k = new RsaKeyParameters(true, new BigInteger("11111"), new BigInteger("111"));
+            var luceneEnc = new LuceneEncryptingKeywordExtractor(Encoding.ASCII.GetBytes("test"));
+            luceneEnc.extract(JsonConvert.SerializeObject(new Consent() { AdditionalDetails = "1" }));
+
 
             try
             {
