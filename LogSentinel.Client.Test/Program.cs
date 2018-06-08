@@ -1,18 +1,12 @@
 ﻿using IO.Swagger.Client;
 using IO.Swagger.Model;
-using Newtonsoft.Json;
 using System;
 
 namespace LogSentinel.Client.Test
 {
     class Program
     {
-        public enum EntryType
-        {
-
-        }
-
-        public static void test()
+        public static void LogEntry()
         {
             LogSentinelClientBuilder builder = LogSentinelClientBuilder
                 .create("38773350-6a64-11e8-a7b3-cfa432063561", "387648f0-6a64-11e8-a7b3-cfa432063561",
@@ -33,12 +27,13 @@ namespace LogSentinel.Client.Test
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction" + e.Message + e.StackTrace);
+                Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction");
             }
         }
+
         static void Main(string[] args)
         {
-            test();
+            LogEntry();
             Console.ReadKey();
         }
     }
