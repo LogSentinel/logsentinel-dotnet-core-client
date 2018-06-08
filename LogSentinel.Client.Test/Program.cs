@@ -1,5 +1,7 @@
 ﻿using LogSentinel.Client.Model;
+using Org.BouncyCastle.Crypto.Parameters;
 using System;
+using Org.BouncyCastle.Math;
 
 namespace LogSentinel.Client.Test
 {
@@ -12,6 +14,8 @@ namespace LogSentinel.Client.Test
                 "bedaac15925a2e46eed80d5b5276fd91764d3ea4fb5ac2b44bd6e06e4c83be87");
 
             LogSentinelClient client = builder.build();
+
+            RsaKeyParameters k = new RsaKeyParameters(true, new BigInteger("11111"), new BigInteger("111"));
 
             try
             {
