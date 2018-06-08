@@ -11,7 +11,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     /// <summary>
     /// API Response

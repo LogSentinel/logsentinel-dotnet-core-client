@@ -1,5 +1,5 @@
 ﻿using LogSentinel.Client.Api;
-using LogSentinel.Client.Client;
+using LogSentinel.Client;
 
 namespace LogSentinel.Client
 {

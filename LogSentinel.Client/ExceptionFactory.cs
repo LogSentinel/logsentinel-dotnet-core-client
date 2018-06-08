@@ -12,7 +12,7 @@
 using System;
 using RestSharp;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

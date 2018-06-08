@@ -23,7 +23,7 @@ using RestSharp;
 using LogSentinel.Client.Auth;
 using Newtonsoft.Json.Linq;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -58,7 +58,7 @@ namespace LogSentinel.Client.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = LogSentinel.Client.Client.Configuration.Default;
+            Configuration = LogSentinel.Client.Configuration.Default;
 
             authentications = new Dictionary<string, Authentication>();
             authentications.Add("basicAuth", new HttpBasicAuth());
@@ -73,7 +73,7 @@ namespace LogSentinel.Client.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? LogSentinel.Client.Client.Configuration.Default;
+            Configuration = config ?? LogSentinel.Client.Configuration.Default;
 
             authentications = new Dictionary<string, Authentication>();
             authentications.Add("basicAuth", new HttpBasicAuth());

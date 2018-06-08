@@ -1,5 +1,4 @@
-﻿using LogSentinel.Client.Client;
-using LogSentinel.Client.Model;
+﻿using LogSentinel.Client.Model;
 using System;
 
 namespace LogSentinel.Client.Test

@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using LogSentinel.Client.Client;
+using LogSentinel.Client;
 using LogSentinel.Client.Model;
 using LogSentinel.Client;
 using LogSentinel.Client.Auth;
@@ -34,7 +34,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>AuditLogEntry</returns>
@@ -46,7 +46,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of AuditLogEntry</returns>
@@ -57,7 +57,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
@@ -69,7 +69,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
@@ -80,7 +80,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -101,7 +101,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -121,7 +121,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
@@ -133,7 +133,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
@@ -144,7 +144,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -166,7 +166,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -187,7 +187,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -202,7 +202,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -216,7 +216,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -236,7 +236,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -255,7 +255,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
@@ -267,7 +267,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
@@ -278,7 +278,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
@@ -290,7 +290,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
@@ -303,7 +303,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of AuditLogEntry</returns>
@@ -315,7 +315,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (AuditLogEntry)</returns>
@@ -326,7 +326,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
@@ -338,7 +338,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
@@ -349,7 +349,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -370,7 +370,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -390,7 +390,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
@@ -402,7 +402,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
@@ -413,7 +413,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -435,7 +435,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -456,7 +456,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -471,7 +471,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -485,7 +485,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -505,7 +505,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -524,7 +524,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
@@ -536,7 +536,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
@@ -547,7 +547,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
@@ -559,7 +559,7 @@ namespace LogSentinel.Client.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
@@ -579,7 +579,7 @@ namespace LogSentinel.Client.Api
         private String contentType;
         private EncryptingKeywordExtractor encryptingKeywordExtractor;
 
-        private LogSentinel.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private LogSentinel.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
         
 
         /// <summary>
@@ -590,7 +590,7 @@ namespace LogSentinel.Client.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = LogSentinel.Client.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = LogSentinel.Client.Configuration.DefaultExceptionFactory;
         }
 
         public AuditLogControllerApi(ApiClient apiClient, BodySerializer bodySerializer,
@@ -622,7 +622,7 @@ namespace LogSentinel.Client.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = LogSentinel.Client.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = LogSentinel.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -653,7 +653,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public LogSentinel.Client.Client.ExceptionFactory ExceptionFactory
+        public LogSentinel.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -691,7 +691,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Get entry by id 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>AuditLogEntry</returns>
@@ -704,7 +704,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Get entry by id 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of AuditLogEntry</returns>
@@ -772,7 +772,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Get entry by id 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of AuditLogEntry</returns>
@@ -786,7 +786,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Get entry by id 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (AuditLogEntry)</returns>
@@ -854,7 +854,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// getHashByEntryId 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
@@ -867,7 +867,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// getHashByEntryId 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
@@ -934,7 +934,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// getHashByEntryId 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
@@ -948,7 +948,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// getHashByEntryId 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
@@ -1015,7 +1015,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -1037,7 +1037,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -1136,7 +1136,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -1159,7 +1159,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an authentication event with the option to pass actor public key and signature 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="authAction">Specific action related to user authentication</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -1258,7 +1258,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>LogResponse</returns>
@@ -1271,7 +1271,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of LogResponse</returns>
@@ -1346,7 +1346,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of LogResponse</returns>
@@ -1360,7 +1360,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log multiple events at the same time. This should rarely be used, but allows background processes to push multiple events at the same time 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestData">A list of log requests</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (LogResponse)</returns>
@@ -1435,7 +1435,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -1458,7 +1458,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -1565,7 +1565,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -1589,7 +1589,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing full details. Action can be INSERT/UPDATE/DELETE/GET or any custom action 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="entityType">When the event is about a particular model entity, you can set its type here</param>
@@ -1696,7 +1696,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -1712,7 +1712,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -1793,7 +1793,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -1810,7 +1810,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by providing just the body without any additional metadata. The body can be fully encrypted or can represent just the hash of the data/document 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <param name="signature">Base64-encoded digital signature on the entry details (the request body) (optional)</param>
@@ -1891,7 +1891,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by a given actor 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -1913,7 +1913,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by a given actor 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -2011,7 +2011,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by a given actor 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -2033,7 +2033,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Log an event by a given actor 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="actorId">ID of the actor performing the action being logged</param>
         /// <param name="action">The name of the action being logged</param>
         /// <param name="details">Any details in any format about the event that you want to store in the log</param>
@@ -2130,7 +2130,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
@@ -2143,7 +2143,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
@@ -2211,7 +2211,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
@@ -2225,7 +2225,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entryId">ID of the audit log entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>
@@ -2293,7 +2293,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Verification</returns>
@@ -2306,7 +2306,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>ApiResponse of Verification</returns>
@@ -2374,7 +2374,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of Verification</returns>
@@ -2388,7 +2388,7 @@ namespace LogSentinel.Client.Api
         /// <summary>
         /// Verify whether a given hash is present, indicating that the log is intact 
         /// </summary>
-        /// <exception cref="LogSentinel.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LogSentinel.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hash">Hash of the entry to verify</param>
         /// <param name="applicationId">Application ID, identifying a target application (obtained from the API credentials page)</param>
         /// <returns>Task of ApiResponse (Verification)</returns>

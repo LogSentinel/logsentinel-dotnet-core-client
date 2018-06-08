@@ -20,7 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = LogSentinel.Client.Client.SwaggerDateConverter;
+using SwaggerDateConverter = LogSentinel.Client.SwaggerDateConverter;
 
 namespace LogSentinel.Client.Model
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     class BodyAndKeywords
     {

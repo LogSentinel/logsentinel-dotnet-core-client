@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     /// <summary>
     /// Represents a readable-only configuration contract.

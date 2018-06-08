@@ -10,7 +10,7 @@
 
 using System;
 
-namespace LogSentinel.Client.Client
+namespace LogSentinel.Client
 {
     /// <summary>
     /// API Exception
