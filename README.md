@@ -32,7 +32,7 @@ public static void LogEntry()
 				.setActorId(actorId),
 			new ActionData().setDetails(details).setAction(act)
 				.setEntryType(entryType), 
-			applicationId,
+			applicationId
 		);
 
 		Console.WriteLine(result.LogEntryId);
