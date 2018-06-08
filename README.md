@@ -12,31 +12,34 @@ Enter the _LogSentinel.Client_ folder (```cd LogSentinel.Client```) and run  the
 You can find the compiled binary in the _bin/[Debug/Release]/netcoreapp2.0_ folder. Now you can add the LogSentinel.Client.dll file to your project's dependencies and use the LogSentinel C# API.
 
 ### Code sample
-```
-       using LogSentinel.Client.Model;
+```csharp
 
-       public static void LogEntry()
-        {
-            LogSentinelClientBuilder builder = LogSentinelClientBuilder
-                .create(applicationId, organizationId, secret);
+using LogSentinel.Client.Model;
 
-            LogSentinelClient client = builder.build();    
+...
 
-            try
-            {
-                var result = client.getAuditLogActions().LogUsingPOST(
-                    new ActorData().setActorDisplayName(actorName).setActorRoles(actorRoles)
-			.setActorId(actorId),
-                    new ActionData().setDetails(details).setAction(act)
-			.setEntryType(entryType), 
-		    applicationId,
-                );
+public static void LogEntry() 
+{
+	LogSentinelClientBuilder builder = LogSentinelClientBuilder
+		.create(applicationId, organizationId, secret);
 
-                Console.WriteLine(result.LogEntryId);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction");
-            }
-        }
+	LogSentinelClient client = builder.build();    
+
+	try
+	{
+		var result = client.getAuditLogActions().LogUsingPOST(
+			new ActorData().setActorDisplayName(actorName).setActorRoles(actorRoles)
+				.setActorId(actorId),
+			new ActionData().setDetails(details).setAction(act)
+				.setEntryType(entryType), 
+			applicationId,
+		);
+
+		Console.WriteLine(result.LogEntryId);
+	}
+	catch (ApiException e)
+	{
+		Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction");
+	}
+}
 ```
