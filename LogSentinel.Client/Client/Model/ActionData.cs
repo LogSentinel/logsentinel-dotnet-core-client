@@ -22,7 +22,7 @@ using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-namespace IO.Swagger.Model
+namespace LogSentinel.Client.Model
 {
     /// <summary>
     /// ActionData

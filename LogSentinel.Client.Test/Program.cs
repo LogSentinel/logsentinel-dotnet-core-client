@@ -1,5 +1,5 @@
 ﻿using IO.Swagger.Client;
-using IO.Swagger.Model;
+using LogSentinel.Client.Model;
 using System;
 
 namespace LogSentinel.Client.Test
