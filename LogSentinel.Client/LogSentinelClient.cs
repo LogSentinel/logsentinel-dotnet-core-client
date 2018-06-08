@@ -1,4 +1,4 @@
-﻿using IO.Swagger.Api;
+﻿using LogSentinel.Client.Api;
 using IO.Swagger.Client;
 
 namespace LogSentinel.Client

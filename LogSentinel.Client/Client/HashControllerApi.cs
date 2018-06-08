@@ -16,7 +16,7 @@ using RestSharp;
 using IO.Swagger.Client;
 using LogSentinel.Client;
 
-namespace IO.Swagger.Api
+namespace LogSentinel.Client.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

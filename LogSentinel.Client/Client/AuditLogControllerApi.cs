@@ -18,7 +18,7 @@ using LogSentinel.Client.Model;
 using LogSentinel.Client;
 using LogSentinel.Client.Auth;
 
-namespace IO.Swagger.Api
+namespace LogSentinel.Client.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
