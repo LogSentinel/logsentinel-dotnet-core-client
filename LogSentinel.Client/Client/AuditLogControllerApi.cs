@@ -1966,11 +1966,7 @@ namespace IO.Swagger.Api
             if (actorId != null) localVarPathParams.Add("actorId", Configuration.ApiClient.ParameterToString(actorId)); // path parameter
 
             if (action != null) localVarPathParams.Add("action", Configuration.ApiClient.ParameterToString(action)); // path parameter
-
-            if (actorDisplayName != null) localVarHeaderParams.Add("actorDisplayName", Configuration.ApiClient.ParameterToString(actorDisplayName)); // header parameter
-
-
-
+            if (actorDisplayName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "actorDisplayName", actorDisplayName)); // query parameter
             if (actorRoles != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "actorRoles", actorRoles)); // query parameter
             if (gdprCorrelationKey != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gdprCorrelationKey", gdprCorrelationKey)); // query parameter
             if (encryptedKeywords != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "encryptedKeywords", encryptedKeywords)); // query parameter
