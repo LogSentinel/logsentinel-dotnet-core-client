@@ -1,6 +1,8 @@
 ## LogSentinel DotNet Core Client
 
 
+[![Build Status](https://travis-ci.org/LogSentinel/logsentinel-dotnet-core-client.svg?branch=master)](https://travis-ci.org/LogSentinel/logsentinel-dotnet-core-client)
+
 ```
        public static void LogEntry()
         {
