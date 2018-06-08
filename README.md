@@ -11,10 +11,12 @@
 
             try
             {
-                var result = client.getAuditLogActions().LogUsingPOST1(
-                    new ActorData().setActorDisplayName(actorName).setActorRoles(actorRoles).setActorId(actorId),
-                    new ActionData().setDetails(details).setAction(act), applicationId,
-                    signature, entryType, null, null
+                var result = client.getAuditLogActions().LogUsingPOST(
+                    new ActorData().setActorDisplayName(actorName).setActorRoles(actorRoles)
+			.setActorId(actorId),
+                    new ActionData().setDetails(details).setAction(act)
+			.setEntryType(entryType), 
+		    applicationId,
                 );
 
                 Console.WriteLine(result.LogEntryId);
