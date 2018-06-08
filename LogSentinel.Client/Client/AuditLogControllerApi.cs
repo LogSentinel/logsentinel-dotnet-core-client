@@ -16,6 +16,7 @@ using RestSharp;
 using IO.Swagger.Client;
 using IO.Swagger.Model;
 using LogSentinel.Client;
+using LogSentinel.Client.Auth;
 
 namespace IO.Swagger.Api
 {
@@ -579,6 +580,7 @@ namespace IO.Swagger.Api
         private EncryptingKeywordExtractor encryptingKeywordExtractor;
 
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogControllerApi"/> class.
@@ -594,6 +596,11 @@ namespace IO.Swagger.Api
         public AuditLogControllerApi(ApiClient apiClient, BodySerializer bodySerializer,
                              BodySigner bodySigner, String contentType, EncryptingKeywordExtractor encryptingKeywordExtractor)
         {
+            this.Configuration = new Configuration { Username = ((HttpBasicAuth)apiClient.authentications["basicAuth"]).getUsername(),
+                Password = ((HttpBasicAuth)apiClient.authentications["basicAuth"]).getPassword()
+            };
+            // this.Configuration = Configuration.Default;
+           
             this.apiClient = apiClient;
             this.bodySerializer = bodySerializer;
             this.bodySigner = bodySigner;
@@ -1957,8 +1964,13 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (actorId != null) localVarPathParams.Add("actorId", Configuration.ApiClient.ParameterToString(actorId)); // path parameter
+
             if (action != null) localVarPathParams.Add("action", Configuration.ApiClient.ParameterToString(action)); // path parameter
-            if (actorDisplayName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "actorDisplayName", actorDisplayName)); // query parameter
+
+            if (actorDisplayName != null) localVarHeaderParams.Add("actorDisplayName", Configuration.ApiClient.ParameterToString(actorDisplayName)); // header parameter
+
+
+
             if (actorRoles != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "actorRoles", actorRoles)); // query parameter
             if (gdprCorrelationKey != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gdprCorrelationKey", gdprCorrelationKey)); // query parameter
             if (encryptedKeywords != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "encryptedKeywords", encryptedKeywords)); // query parameter

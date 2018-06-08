@@ -30,7 +30,7 @@ namespace IO.Swagger.Client
     /// </summary>
     public partial class ApiClient
     {
-        private Dictionary<String, Authentication> authentications;
+        public Dictionary<String, Authentication> authentications;
         private Dictionary<String, String> defaultHeaderMap = new Dictionary<string, string>();
         private JObject json;
 
@@ -59,6 +59,10 @@ namespace IO.Swagger.Client
         public ApiClient()
         {
             Configuration = IO.Swagger.Client.Configuration.Default;
+
+            authentications = new Dictionary<string, Authentication>();
+            authentications.Add("basicAuth", new HttpBasicAuth());
+
             RestClient = new RestClient("https://api.logsentinel.com");
         }
 
@@ -70,6 +74,9 @@ namespace IO.Swagger.Client
         public ApiClient(Configuration config)
         {
             Configuration = config ?? IO.Swagger.Client.Configuration.Default;
+
+            authentications = new Dictionary<string, Authentication>();
+            authentications.Add("basicAuth", new HttpBasicAuth());
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -85,6 +92,10 @@ namespace IO.Swagger.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
+
+            authentications = new Dictionary<string, Authentication>();
+            authentications.Add("basicAuth", new HttpBasicAuth());
+
             Configuration = Client.Configuration.Default;
         }
 

@@ -33,8 +33,7 @@ namespace LogSentinel.Client
 
         public LogSentinelClient build()
         {
-            ApiClient apiClient = new ApiClient(basePath);
-
+            ApiClient apiClient = new ApiClient("https://api.logsentinel.com/api/");
             apiClient.setUsername(organizationId.Trim());
             apiClient.setPassword(secret.Trim());
             apiClient.addDefaultHeader("Application-Id", applicationId.Trim());
