@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
-using IO.Swagger.Client;
+using LogSentinel.Client.Client;
 using LogSentinel.Client.Api;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;

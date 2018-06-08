@@ -10,7 +10,7 @@
 
 using Newtonsoft.Json.Converters;
 
-namespace IO.Swagger.Client
+namespace LogSentinel.Client.Client
 {
     /// <summary>
     /// Formatter for 'date' swagger formats ss defined by full-date - RFC3339

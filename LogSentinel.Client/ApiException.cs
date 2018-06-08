@@ -10,7 +10,7 @@
 
 using System;
 
-namespace IO.Swagger.Client
+namespace LogSentinel.Client.Client
 {
     /// <summary>
     /// API Exception
