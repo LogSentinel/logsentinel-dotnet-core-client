@@ -13,8 +13,8 @@ You can find the compiled binary in the _bin/[Debug/Release]/netcoreapp2.0_ fold
 
 ### Code sample
 ```
-       using IO.Swagger.Client;
-       using IO.Swagger.Model;
+       using LogSentinel.Client.Model;
+       using LogSentinel.Client.Client;
 
        public static void LogEntry()
         {
