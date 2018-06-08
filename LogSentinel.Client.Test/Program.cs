@@ -19,14 +19,14 @@ namespace LogSentinel.Client.Test
                 "bedaac15925a2e46eed80d5b5276fd91764d3ea4fb5ac2b44bd6e06e4c83be87");
 
             LogSentinelClient client = builder.build();
-            
 
             try
             {
-                var result = client.getAuditLogActions().LogUsingPOST1(
+                var result = client.getAuditLogActions().LogUsingPOST(
                     new ActorData().setActorDisplayName("ActorName").setActorRoles("ActorRoles").setActorId("0885"),
-                    new ActionData().setDetails("{\"test\"}").setAction("act"), "38773350-6a64-11e8-a7b3-cfa432063561",
-                    "", "BUSINESS_LOGIC_ENTRY", null, null
+                    new ActionData().setDetails(new Consent() { AdditionalDetails = "1" }).setAction("act")
+                        .setEntryType("BUSINESSLOGICENTRY"), 
+                    "38773350-6a64-11e8-a7b3-cfa432063561"
                 );
 
                 Console.WriteLine(result.LogEntryId);

@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Details
         /// </summary>
         [DataMember(Name="details", EmitDefaultValue=false)]
-        public string Details { get; set; }
+        public object Details { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityId
@@ -222,9 +222,15 @@ namespace IO.Swagger.Model
             return this;
         }
 
-        public ActionData setDetails(string v)
+        public ActionData setDetails(object v)
         {
             this.Details = v;
+            return this;
+        }
+
+        public ActionData setEntryType(string v)
+        {
+            this.EntityType = v;
             return this;
         }
     }
