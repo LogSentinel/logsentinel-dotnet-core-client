@@ -7,6 +7,11 @@ namespace LogSentinel.Client.Test
 {
     class Program
     {
+        public enum EntryType
+        {
+
+        }
+
         public static void test()
         {
             LogSentinelClientBuilder builder = LogSentinelClientBuilder
@@ -18,15 +23,17 @@ namespace LogSentinel.Client.Test
 
             try
             {
-                var result = client.getAuditLogActions().LogUsingPOST1("actorId", "action", "{\"test\"}", "38773350-6a64-11e8-a7b3-cfa432063561",
-                    "", "BUSINESS_LOGIC_ENTRY", "actorDispName", null, null, null
+                var result = client.getAuditLogActions().LogUsingPOST1(
+                    new ActorData().setActorDisplayName("ActorName").setActorRoles("ActorRoles").setActorId("0885"),
+                    new ActionData().setDetails("{\"test\"}").setAction("act"), "38773350-6a64-11e8-a7b3-cfa432063561",
+                    "", "BUSINESS_LOGIC_ENTRY", null, null
                 );
 
                 Console.WriteLine(result.LogEntryId);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction");
+                Console.WriteLine("Exception when calling AuditLogControllerApi#logAuthAction" + e.Message + e.StackTrace);
             }
         }
         static void Main(string[] args)

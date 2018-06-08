@@ -228,7 +228,7 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogUsingPOST1(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        LogResponse LogUsingPOST1(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string auditLogEntryType = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
 
         /// <summary>
         /// Log an event by a given actor
@@ -1903,9 +1903,10 @@ namespace IO.Swagger.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogUsingPOST1(string actorId, string action, string details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public LogResponse LogUsingPOST1(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string auditLogEntryType = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
         {
-            ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorId, action, details, applicationId, signature, auditLogEntryType, actorDisplayName, actorRoles, gdprCorrelationKey, encryptedKeywords);
+
+            ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorData.ActorId, actionData.Action, actionData.Details, applicationId, signature, auditLogEntryType, actorData.ActorDisplayName, actorData.ActorRoles, gdprCorrelationKey, encryptedKeywords);
             return localVarResponse.Data;
         }
 

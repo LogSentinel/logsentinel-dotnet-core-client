@@ -216,9 +216,15 @@ namespace IO.Swagger.Model
             yield break;
         }
 
-        public object setAction(string v)
+        public ActionData setAction(string v)
         {
             this.Action = v;
+            return this;
+        }
+
+        public ActionData setDetails(string v)
+        {
+            this.Details = v;
             return this;
         }
     }
