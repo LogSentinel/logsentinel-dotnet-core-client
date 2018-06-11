@@ -16,8 +16,6 @@ namespace LogSentinel.Client.Test
 
             LogSentinelClient client = builder.build();
 
-            var luceneEnc = new LuceneEncryptingKeywordExtractor(Convert.FromBase64String("NWFhMTQ0YWI3ZmU5YTJmNDk2MmVhZmU2ZTFkZWUzNWQ="));
-
             try
             {
                 var logEntry = new LogEntry
