@@ -33,9 +33,6 @@ namespace LogSentinel.Client
 
                     result.Add(termAttr.Term);
                 }
-
-
-                Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(result));
             }
             catch (IOException e)
             {

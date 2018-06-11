@@ -1,8 +1,5 @@
 ﻿using LogSentinel.Client.Model;
-using Org.BouncyCastle.Crypto.Parameters;
 using System;
-using Org.BouncyCastle.Math;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace LogSentinel.Client.Test
@@ -19,18 +16,17 @@ namespace LogSentinel.Client.Test
 
             LogSentinelClient client = builder.build();
 
-            // RsaKeyParameters k = new RsaKeyParameters(true, new BigInteger("11111"), new BigInteger("111"));
-            var luceneEnc = new LuceneEncryptingKeywordExtractor(Encoding.ASCII.GetBytes("test"));
-            luceneEnc.extract(JsonConvert.SerializeObject(new Consent() { AdditionalDetails = "1" }));
+            var luceneEnc = new LuceneEncryptingKeywordExtractor(Convert.FromBase64String("NWFhMTQ0YWI3ZmU5YTJmNDk2MmVhZmU2ZTFkZWUzNWQ="));
 
 
             try
             {
                 var result = client.getAuditLogActions().LogUsingPOST(
                     new ActorData().setActorDisplayName("ActorName").setActorRoles("ActorRoles").setActorId("0885"),
-                    new ActionData().setDetails(new Consent() { AdditionalDetails = "1" }).setAction("act")
-                        .setEntryType("BUSINESSLOGICENTRY"), 
-                    "38773350-6a64-11e8-a7b3-cfa432063561"
+                    new ActionData().setDetails(new Consent() { AdditionalDetails = "1", DataSubjectId = "1234" }).setAction("act")
+                        .setEntryType("BUSINESS_LOGIC_ENTRY"), 
+                    "38773350-6a64-11e8-a7b3-cfa432063561", null, null,
+                    luceneEnc.extract(JsonConvert.SerializeObject(new Consent() { AdditionalDetails = "1", DataSubjectId = "1234" }))
                 );
 
                 Console.WriteLine(result.LogEntryId);
