@@ -1,6 +1,5 @@
-﻿using LogSentinel.Client.Model;
-using System;
-using Newtonsoft.Json;
+﻿using System;
+using LogSentinel.Client.Model;
 
 namespace LogSentinel.Client.Test
 {
