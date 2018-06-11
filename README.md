@@ -22,6 +22,8 @@ public static void LogEntry()
 {
 	LogSentinelClientBuilder builder = LogSentinelClientBuilder
 		.create(applicationId, organizationId, secret);
+	
+	builder.setEncryptionKey(encryptionKey); // Optional
 
 	LogSentinelClient client = builder.build();    
 
