@@ -15,6 +15,8 @@ namespace LogSentinel.Client.Test
                 .create("38773350-6a64-11e8-a7b3-cfa432063561", "387648f0-6a64-11e8-a7b3-cfa432063561",
                 "bedaac15925a2e46eed80d5b5276fd91764d3ea4fb5ac2b44bd6e06e4c83be87");
 
+            builder.setEncryptionKey(Convert.FromBase64String("NWFhMTQ0YWI3ZmU5YTJmNDk2MmVhZmU2ZTFkZWUzNWQ="));
+
             LogSentinelClient client = builder.build();
 
             // RsaKeyParameters k = new RsaKeyParameters(true, new BigInteger("11111"), new BigInteger("111"));

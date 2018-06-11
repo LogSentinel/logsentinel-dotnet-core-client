@@ -1,7 +1,6 @@
 ﻿using LogSentinel.Client.Util;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
-using Lucene.Net.Analysis.Tokenattributes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,8 +29,13 @@ namespace LogSentinel.Client
                 
                 while (stream.IncrementToken())
                 {
-                    result.Add(encrypt(stream.GetAttribute<TermAttribute>().ToString()));
+                    var termAttr = stream.GetAttribute<Lucene.Net.Analysis.Tokenattributes.ITermAttribute>();
+
+                    result.Add(termAttr.Term);
                 }
+
+
+                Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(result));
             }
             catch (IOException e)
             {
