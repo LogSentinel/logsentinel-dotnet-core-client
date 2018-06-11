@@ -164,9 +164,9 @@ namespace LogSentinel.Client.Model
             return this;
         }
 
-        public ActorData setActorRoles(string v)
+        public ActorData setActorRoles(List<string> v)
         {
-            this.ActorRoles = new List<string>() { v };
+            this.ActorRoles = v;
             return this;
         }
     }

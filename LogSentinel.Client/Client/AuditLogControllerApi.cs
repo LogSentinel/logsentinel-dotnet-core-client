@@ -228,7 +228,7 @@ namespace LogSentinel.Client.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        LogResponse LogUsingPOST(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        LogResponse LogUsingPOST(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string gdprCorrelationKey = null);
 
         /// <summary>
         /// Log an event by a given actor
@@ -248,7 +248,7 @@ namespace LogSentinel.Client.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, object details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null);
+        ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, object details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null);
         /// <summary>
         /// Verify whether a given entry&#39;s hash is present, indicating that the log is intact
         /// </summary>
@@ -1903,10 +1903,10 @@ namespace LogSentinel.Client.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>LogResponse</returns>
-        public LogResponse LogUsingPOST(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public LogResponse LogUsingPOST(ActorData actorData, ActionData actionData, string applicationId, string signature = null, string gdprCorrelationKey = null)
         {
 
-            ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorData.ActorId, actionData.Action, actionData.Details, applicationId, signature, actionData.EntityType, actorData.ActorDisplayName, actorData.ActorRoles, gdprCorrelationKey, encryptedKeywords);
+            ApiResponse<LogResponse> localVarResponse = LogUsingPOST1WithHttpInfo(actorData.ActorId, actionData.Action, actionData.Details, applicationId, signature, actionData.EntityType, actorData.ActorDisplayName, actorData.ActorRoles, gdprCorrelationKey);
             return localVarResponse.Data;
         }
 
@@ -1925,8 +1925,9 @@ namespace LogSentinel.Client.Api
         /// <param name="gdprCorrelationKey">If the event is about GDPR-related action, you can correlate it with a process in the GDPR register (optional)</param>
         /// <param name="encryptedKeywords">If you are encrypting the parameters in your request, you can extract and encrypt keywords client-side and send them to us in order to make use of our search functionality over encrypted text (optional)</param>
         /// <returns>ApiResponse of LogResponse</returns>
-        public ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, object details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null, List<string> encryptedKeywords = null)
+        public ApiResponse<LogResponse> LogUsingPOST1WithHttpInfo(string actorId, string action, object details, string applicationId, string signature = null, string auditLogEntryType = null, string actorDisplayName = null, List<string> actorRoles = null, string gdprCorrelationKey = null)
         {
+            var encryptedKeywords = new List<string>();
             // verify the required parameter 'actorId' is set
             if (actorId == null)
                 throw new ApiException(400, "Missing required parameter 'actorId' when calling AuditLogControllerApi->LogUsingPOST1");
@@ -1970,19 +1971,24 @@ namespace LogSentinel.Client.Api
             if (actorDisplayName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "actorDisplayName", actorDisplayName)); // query parameter
             if (actorRoles != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "actorRoles", actorRoles)); // query parameter
             if (gdprCorrelationKey != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gdprCorrelationKey", gdprCorrelationKey)); // query parameter
-            if (encryptedKeywords != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "encryptedKeywords", encryptedKeywords)); // query parameter
             if (applicationId != null) localVarHeaderParams.Add("Application-Id", Configuration.ApiClient.ParameterToString(applicationId)); // header parameter
             if (signature != null) localVarHeaderParams.Add("Signature", Configuration.ApiClient.ParameterToString(signature)); // header parameter
             if (auditLogEntryType != null) localVarHeaderParams.Add("Audit-Log-Entry-Type", Configuration.ApiClient.ParameterToString(auditLogEntryType)); // header parameter
             if (details != null && details.GetType() != typeof(byte[]))
             {
-                // localVarPostBody = Configuration.ApiClient.Serialize(details); // http body (model) parameter
                 localVarPostBody = bodySerializer.serialize(details);
+
+                if (bodySerializer.encryptionKeySet())
+                {
+                    encryptedKeywords = encryptingKeywordExtractor.extract(Newtonsoft.Json.JsonConvert.SerializeObject(details));
+                }
             }
             else
             {
                 localVarPostBody = details; // byte array
             }
+
+            if (encryptedKeywords != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "encryptedKeywords", encryptedKeywords)); // query parameter
 
             // authentication (basicAuth) required
             // http basic authentication required

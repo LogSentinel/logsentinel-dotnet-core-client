@@ -18,15 +18,25 @@ namespace LogSentinel.Client.Test
 
             var luceneEnc = new LuceneEncryptingKeywordExtractor(Convert.FromBase64String("NWFhMTQ0YWI3ZmU5YTJmNDk2MmVhZmU2ZTFkZWUzNWQ="));
 
-
             try
             {
+                var logEntry = new LogEntry
+                {
+                    ActorName = "John Doe",
+                    ActorId = "1234-5678",
+                    ActorRoles = new System.Collections.Generic.List<string> { "CTO", "CEO" },
+
+                    Action = "Sample action",
+                    ActionDetails = new Consent() { AdditionalDetails = "1", DataSubjectId = "1234" },
+                    EntryType = "BUSINESS_LOGIC_ENTRY"
+                };
+
                 var result = client.getAuditLogActions().LogUsingPOST(
-                    new ActorData().setActorDisplayName("ActorName").setActorRoles("ActorRoles").setActorId("0885"),
-                    new ActionData().setDetails(new Consent() { AdditionalDetails = "1", DataSubjectId = "1234" }).setAction("act")
-                        .setEntryType("BUSINESS_LOGIC_ENTRY"), 
-                    "38773350-6a64-11e8-a7b3-cfa432063561", null, null,
-                    luceneEnc.extract(JsonConvert.SerializeObject(new Consent() { AdditionalDetails = "1", DataSubjectId = "1234" }))
+                    new ActorData().setActorDisplayName(logEntry.ActorName).setActorRoles(logEntry.ActorRoles)
+                        .setActorId(logEntry.ActorId),
+                    new ActionData().setDetails(logEntry.ActionDetails).setAction(logEntry.Action)
+                        .setEntryType(logEntry.EntryType), 
+                    "38773350-6a64-11e8-a7b3-cfa432063561"
                 );
 
                 Console.WriteLine(result.LogEntryId);
