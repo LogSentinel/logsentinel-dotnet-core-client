@@ -28,7 +28,7 @@ namespace LogSentinel.Client.Util
             if (appendRandomBlock)
             {
                 //using same IV with random beginning block of bytes is as secure as using random IV
-                byte[] withRandomStart = appendRandomBeginning(bytes, encryptionKey.Length / 8);
+                byte[] withRandomStart = appendRandomBeginning(bytes, (encryptionKey.Length / 8) + 12);
                 encValue = cipher.DoFinal(withRandomStart);
 
             }

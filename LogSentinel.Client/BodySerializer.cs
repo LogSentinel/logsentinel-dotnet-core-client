@@ -7,5 +7,6 @@ namespace LogSentinel.Client
     public interface BodySerializer
     {
         String serialize(Object tobject);
+        bool encryptionKeySet();
     }
 }

@@ -1,14 +1,13 @@
 ﻿using LogSentinel.Client.Util;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
-using Lucene.Net.Analysis.Tokenattributes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace LogSentinel.Client
 {
-    class LuceneEncryptingKeywordExtractor : EncryptingKeywordExtractor
+    public class LuceneEncryptingKeywordExtractor : EncryptingKeywordExtractor
     {
         private static Analyzer analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_CURRENT);
 
@@ -30,7 +29,9 @@ namespace LogSentinel.Client
                 
                 while (stream.IncrementToken())
                 {
-                    result.Add(encrypt(stream.GetAttribute<TermAttribute>().ToString()));
+                    var termAttr = stream.GetAttribute<Lucene.Net.Analysis.Tokenattributes.ITermAttribute>();
+
+                    result.Add(termAttr.Term);
                 }
             }
             catch (IOException e)

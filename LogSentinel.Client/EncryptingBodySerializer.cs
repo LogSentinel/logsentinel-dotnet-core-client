@@ -16,6 +16,14 @@ namespace LogSentinel.Client
             this.originalSerializer = originalSerializer;
         }
 
+        public bool encryptionKeySet()
+        {
+            if (encryptionKey != null)
+                return true;
+
+            return false;
+        }
+
         public String serialize(Object tobject)
         {
             String content = originalSerializer.serialize(tobject);

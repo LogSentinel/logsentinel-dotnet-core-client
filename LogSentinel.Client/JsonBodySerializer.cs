@@ -13,6 +13,11 @@ namespace LogSentinel.Client
         {
             this.json = json;
         }
+
+        public bool encryptionKeySet()
+        {
+            return false;
+        }
         
         public String serialize(Object tobject)
         {
