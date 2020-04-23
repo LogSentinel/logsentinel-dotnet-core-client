@@ -1,0 +1,1 @@
+`java -jar swagger-codegen-cli-2.4.9.jar generate -i https://api.logsentinel.com/api-docs/def -l csharp -o /workspace/logsentinel-dotnet-core-client --invoker-package com.logsentinel --model-package Model --api-package Api --http-user-agent LogSentinel-CSharp-Client --artifact-id logsentinel-csharp-client --config swagger-codegen.json`

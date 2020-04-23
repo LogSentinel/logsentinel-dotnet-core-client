@@ -1,0 +1,47 @@
+# LogSentinel.Client.Model.GDPRRegisterRecord
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AuditTrailCorrelationKey** | **string** |  | [optional] 
+**Branch** | **string** |  | [optional] 
+**ControllerId** | **Guid?** |  | [optional] 
+**ControllersDescription** | **string** |  | [optional] 
+**Created** | **DateTime?** |  | [optional] 
+**DataRecipientCategories** | **List&lt;string&gt;** |  | [optional] 
+**DataRecipientCategoriesOther** | **List&lt;string&gt;** |  | [optional] 
+**DataSubjectCategory** | **string** |  | [optional] 
+**DataSubjectCategoryOther** | **string** |  | [optional] 
+**Deleted** | **bool?** |  | [optional] 
+**Description** | **string** |  | [optional] 
+**Id** | **Guid?** |  | [optional] 
+**JointControllerIds** | **List&lt;Guid?&gt;** |  | [optional] 
+**Notes** | **string** |  | [optional] 
+**OrganizationId** | **Guid?** |  | [optional] 
+**OrganizationRole** | **string** |  | [optional] 
+**PersonalDataCategory** | **string** |  | [optional] 
+**PersonalDataCategoryOther** | **string** |  | [optional] 
+**PersonalDataFields** | **string** |  | [optional] 
+**ProcessOwner** | **string** |  | [optional] 
+**ProcessingActivityCode** | **string** |  | [optional] 
+**ProcessingActivityName** | **string** |  | [optional] 
+**ProcessingContract** | **byte[]** |  | [optional] 
+**ProcessingLegalBasis** | **string** |  | [optional] 
+**ProcessorId** | **Guid?** |  | [optional] 
+**Purposes** | **List&lt;string&gt;** |  | [optional] 
+**Recipients** | [**List&lt;GDPRRecipient&gt;**](GDPRRecipient.md) |  | [optional] 
+**RelevantDepartment** | **string** |  | [optional] 
+**RetentionMonths** | **int?** |  | [optional] 
+**RiskDescription** | **string** |  | [optional] 
+**SensitivePersonalDataCategory** | **string** |  | [optional] 
+**Software** | **string** |  | [optional] 
+**SubProcessorIds** | **List&lt;Guid?&gt;** |  | [optional] 
+**Tags** | **List&lt;string&gt;** |  | [optional] 
+**TechnicalMeasures** | **List&lt;string&gt;** |  | [optional] 
+**TechnicalMeasuresOther** | **List&lt;string&gt;** |  | [optional] 
+**ThirdCountryTransferSafeguards** | **List&lt;string&gt;** |  | [optional] 
+**ThirdCountryTransfers** | **List&lt;string&gt;** |  | [optional] 
+**Updated** | **DateTime?** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
