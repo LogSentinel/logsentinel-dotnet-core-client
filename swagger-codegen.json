@@ -1,5 +1,5 @@
 {
-    "targetFramework": "v4.5",
+    "targetFramework": "v5.0",
     "netCoreProjectFile": "true",
 	"packageName": "LogSentinel.Client",
 	"sourceFolder": "src"

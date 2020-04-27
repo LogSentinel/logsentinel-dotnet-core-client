@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using LogSentinel.Client.Client;
 using LogSentinel.Client.Model;
 
@@ -559,7 +559,7 @@ namespace LogSentinel.Client.Api
             if (firstTreeHash == null)
                 throw new ApiException(400, "Missing required parameter 'firstTreeHash' when calling VerificationApi->GetConsistencyProof");
 
-            var localVarPath = "/api/verification/merkle/proofs/consistency";
+            var localVarPath = "./api/verification/merkle/proofs/consistency";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -607,7 +607,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<ConsistencyProof>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ConsistencyProof) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsistencyProof)));
         }
 
@@ -643,7 +643,7 @@ namespace LogSentinel.Client.Api
             if (firstTreeHash == null)
                 throw new ApiException(400, "Missing required parameter 'firstTreeHash' when calling VerificationApi->GetConsistencyProof");
 
-            var localVarPath = "/api/verification/merkle/proofs/consistency";
+            var localVarPath = "./api/verification/merkle/proofs/consistency";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -691,7 +691,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<ConsistencyProof>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ConsistencyProof) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsistencyProof)));
         }
 
@@ -729,7 +729,7 @@ namespace LogSentinel.Client.Api
             if (startHash == null)
                 throw new ApiException(400, "Missing required parameter 'startHash' when calling VerificationApi->GetEntriesBetweenHashes");
 
-            var localVarPath = "/api/verification/entries";
+            var localVarPath = "./api/verification/entries";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -777,7 +777,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -816,7 +816,7 @@ namespace LogSentinel.Client.Api
             if (startHash == null)
                 throw new ApiException(400, "Missing required parameter 'startHash' when calling VerificationApi->GetEntriesBetweenHashes");
 
-            var localVarPath = "/api/verification/entries";
+            var localVarPath = "./api/verification/entries";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -864,7 +864,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -892,7 +892,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetEthereumEntries");
 
-            var localVarPath = "/api/verification/ethereumEntries";
+            var localVarPath = "./api/verification/ethereumEntries";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -936,7 +936,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<EthereumData>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<EthereumData>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EthereumData>)));
         }
 
@@ -965,7 +965,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetEthereumEntries");
 
-            var localVarPath = "/api/verification/ethereumEntries";
+            var localVarPath = "./api/verification/ethereumEntries";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1009,7 +1009,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<EthereumData>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<EthereumData>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EthereumData>)));
         }
 
@@ -1042,7 +1042,7 @@ namespace LogSentinel.Client.Api
             if (hash == null)
                 throw new ApiException(400, "Missing required parameter 'hash' when calling VerificationApi->GetInclusionProof");
 
-            var localVarPath = "/api/verification/merkle/proofs/inclusion";
+            var localVarPath = "./api/verification/merkle/proofs/inclusion";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1089,7 +1089,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<InclusionProof>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InclusionProof) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InclusionProof)));
         }
 
@@ -1123,7 +1123,7 @@ namespace LogSentinel.Client.Api
             if (hash == null)
                 throw new ApiException(400, "Missing required parameter 'hash' when calling VerificationApi->GetInclusionProof");
 
-            var localVarPath = "/api/verification/merkle/proofs/inclusion";
+            var localVarPath = "./api/verification/merkle/proofs/inclusion";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1170,7 +1170,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<InclusionProof>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InclusionProof) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InclusionProof)));
         }
 
@@ -1198,7 +1198,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetLatestTreeHead");
 
-            var localVarPath = "/api/verification/merkle/latestTreeHead";
+            var localVarPath = "./api/verification/merkle/latestTreeHead";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1244,7 +1244,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<TreeHead>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (TreeHead) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TreeHead)));
         }
 
@@ -1273,7 +1273,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetLatestTreeHead");
 
-            var localVarPath = "/api/verification/merkle/latestTreeHead";
+            var localVarPath = "./api/verification/merkle/latestTreeHead";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1319,7 +1319,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<TreeHead>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (TreeHead) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TreeHead)));
         }
 
@@ -1342,7 +1342,7 @@ namespace LogSentinel.Client.Api
         public ApiResponse< MerkleTreeInfo > GetMerkleTreeInfoWithHttpInfo ()
         {
 
-            var localVarPath = "/api/verification/merkle/info";
+            var localVarPath = "./api/verification/merkle/info";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1387,7 +1387,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<MerkleTreeInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (MerkleTreeInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MerkleTreeInfo)));
         }
 
@@ -1411,7 +1411,7 @@ namespace LogSentinel.Client.Api
         public async System.Threading.Tasks.Task<ApiResponse<MerkleTreeInfo>> GetMerkleTreeInfoAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/api/verification/merkle/info";
+            var localVarPath = "./api/verification/merkle/info";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1456,7 +1456,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<MerkleTreeInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (MerkleTreeInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MerkleTreeInfo)));
         }
 
@@ -1484,7 +1484,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetResolvedVerificationFailures");
 
-            var localVarPath = "/api/verification/resolved-failures";
+            var localVarPath = "./api/verification/resolved-failures";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1530,7 +1530,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<ResolvedVerificationFailureResponse>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<ResolvedVerificationFailureResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ResolvedVerificationFailureResponse>)));
         }
 
@@ -1559,7 +1559,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling VerificationApi->GetResolvedVerificationFailures");
 
-            var localVarPath = "/api/verification/resolved-failures";
+            var localVarPath = "./api/verification/resolved-failures";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1605,7 +1605,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<ResolvedVerificationFailureResponse>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<ResolvedVerificationFailureResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ResolvedVerificationFailureResponse>)));
         }
 
@@ -1638,7 +1638,7 @@ namespace LogSentinel.Client.Api
             if (hash == null)
                 throw new ApiException(400, "Missing required parameter 'hash' when calling VerificationApi->Verify");
 
-            var localVarPath = "/api/verification/verify";
+            var localVarPath = "./api/verification/verify";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1686,7 +1686,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Verification>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Verification) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
@@ -1720,7 +1720,7 @@ namespace LogSentinel.Client.Api
             if (hash == null)
                 throw new ApiException(400, "Missing required parameter 'hash' when calling VerificationApi->Verify");
 
-            var localVarPath = "/api/verification/verify";
+            var localVarPath = "./api/verification/verify";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1768,7 +1768,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Verification>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Verification) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
@@ -1801,7 +1801,7 @@ namespace LogSentinel.Client.Api
             if (entryId == null)
                 throw new ApiException(400, "Missing required parameter 'entryId' when calling VerificationApi->VerifyEntry");
 
-            var localVarPath = "/api/verification/verifyEntry";
+            var localVarPath = "./api/verification/verifyEntry";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1849,7 +1849,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Verification>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Verification) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 
@@ -1883,7 +1883,7 @@ namespace LogSentinel.Client.Api
             if (entryId == null)
                 throw new ApiException(400, "Missing required parameter 'entryId' when calling VerificationApi->VerifyEntry");
 
-            var localVarPath = "/api/verification/verifyEntry";
+            var localVarPath = "./api/verification/verifyEntry";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1931,7 +1931,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Verification>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Verification) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Verification)));
         }
 

@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using LogSentinel.Client.Client;
 using LogSentinel.Client.Model;
 
@@ -324,7 +324,7 @@ namespace LogSentinel.Client.Api
             if (values == null)
                 throw new ApiException(400, "Missing required parameter 'values' when calling SearchApi->GetBatch");
 
-            var localVarPath = "/api/search/batch";
+            var localVarPath = "./api/search/batch";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -375,7 +375,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -420,7 +420,7 @@ namespace LogSentinel.Client.Api
             if (values == null)
                 throw new ApiException(400, "Missing required parameter 'values' when calling SearchApi->GetBatch");
 
-            var localVarPath = "/api/search/batch";
+            var localVarPath = "./api/search/batch";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -471,7 +471,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -509,7 +509,7 @@ namespace LogSentinel.Client.Api
             if (entityType == null)
                 throw new ApiException(400, "Missing required parameter 'entityType' when calling SearchApi->GetEntityHistory");
 
-            var localVarPath = "/api/search/entityHistory";
+            var localVarPath = "./api/search/entityHistory";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -557,7 +557,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -596,7 +596,7 @@ namespace LogSentinel.Client.Api
             if (entityType == null)
                 throw new ApiException(400, "Missing required parameter 'entityType' when calling SearchApi->GetEntityHistory");
 
-            var localVarPath = "/api/search/entityHistory";
+            var localVarPath = "./api/search/entityHistory";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -644,7 +644,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -677,7 +677,7 @@ namespace LogSentinel.Client.Api
             if (searchRequest == null)
                 throw new ApiException(400, "Missing required parameter 'searchRequest' when calling SearchApi->Search");
 
-            var localVarPath = "/api/search";
+            var localVarPath = "./api/search";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -731,7 +731,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 
@@ -765,7 +765,7 @@ namespace LogSentinel.Client.Api
             if (searchRequest == null)
                 throw new ApiException(400, "Missing required parameter 'searchRequest' when calling SearchApi->Search");
 
-            var localVarPath = "/api/search";
+            var localVarPath = "./api/search";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -819,7 +819,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<AuditLogEntry>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AuditLogEntry>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AuditLogEntry>)));
         }
 

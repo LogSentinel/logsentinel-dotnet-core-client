@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using LogSentinel.Client.Client;
 
 namespace LogSentinel.Client.Api
@@ -516,7 +516,7 @@ namespace LogSentinel.Client.Api
             if (entryId == null)
                 throw new ApiException(400, "Missing required parameter 'entryId' when calling HashApi->GetHash");
 
-            var localVarPath = "/api/getStandaloneHash";
+            var localVarPath = "./api/getStandaloneHash";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -564,7 +564,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -598,7 +598,7 @@ namespace LogSentinel.Client.Api
             if (entryId == null)
                 throw new ApiException(400, "Missing required parameter 'entryId' when calling HashApi->GetHash");
 
-            var localVarPath = "/api/getStandaloneHash";
+            var localVarPath = "./api/getStandaloneHash";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -646,7 +646,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -700,7 +700,7 @@ namespace LogSentinel.Client.Api
             if (actorId == null)
                 throw new ApiException(400, "Missing required parameter 'actorId' when calling HashApi->GetHashableContent");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/{action}";
+            var localVarPath = "./api/getHashableContent/{actorId}/{action}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -764,7 +764,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -819,7 +819,7 @@ namespace LogSentinel.Client.Api
             if (actorId == null)
                 throw new ApiException(400, "Missing required parameter 'actorId' when calling HashApi->GetHashableContent");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/{action}";
+            var localVarPath = "./api/getHashableContent/{actorId}/{action}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -883,7 +883,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -937,7 +937,7 @@ namespace LogSentinel.Client.Api
             if (authAction == null)
                 throw new ApiException(400, "Missing required parameter 'authAction' when calling HashApi->GetHashableContentForAuthAction");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/auth/{authAction}";
+            var localVarPath = "./api/getHashableContent/{actorId}/auth/{authAction}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1001,7 +1001,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -1056,7 +1056,7 @@ namespace LogSentinel.Client.Api
             if (authAction == null)
                 throw new ApiException(400, "Missing required parameter 'authAction' when calling HashApi->GetHashableContentForAuthAction");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/auth/{authAction}";
+            var localVarPath = "./api/getHashableContent/{actorId}/auth/{authAction}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1120,7 +1120,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -1184,7 +1184,7 @@ namespace LogSentinel.Client.Api
             if (entityType == null)
                 throw new ApiException(400, "Missing required parameter 'entityType' when calling HashApi->GetHashableContentForStandardAction");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/{action}/{entityType}/{entityId}";
+            var localVarPath = "./api/getHashableContent/{actorId}/{action}/{entityType}/{entityId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1250,7 +1250,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -1315,7 +1315,7 @@ namespace LogSentinel.Client.Api
             if (entityType == null)
                 throw new ApiException(400, "Missing required parameter 'entityType' when calling HashApi->GetHashableContentForStandardAction");
 
-            var localVarPath = "/api/getHashableContent/{actorId}/{action}/{entityType}/{entityId}";
+            var localVarPath = "./api/getHashableContent/{actorId}/{action}/{entityType}/{entityId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1381,7 +1381,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -1419,7 +1419,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling HashApi->GetHashableContentSimple");
 
-            var localVarPath = "/api/getHashableContent";
+            var localVarPath = "./api/getHashableContent";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1478,7 +1478,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
@@ -1517,7 +1517,7 @@ namespace LogSentinel.Client.Api
             if (applicationId == null)
                 throw new ApiException(400, "Missing required parameter 'applicationId' when calling HashApi->GetHashableContentSimple");
 
-            var localVarPath = "/api/getHashableContent";
+            var localVarPath = "./api/getHashableContent";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1576,7 +1576,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 

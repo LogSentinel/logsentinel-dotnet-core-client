@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = LogSentinel.Client.Client.SwaggerDateConverter;
 
 namespace LogSentinel.Client.Model
@@ -28,7 +26,7 @@ namespace LogSentinel.Client.Model
     /// UpdateUserRequest
     /// </summary>
     [DataContract]
-    public partial class UpdateUserRequest :  IEquatable<UpdateUserRequest>, IValidatableObject
+    public partial class UpdateUserRequest :  IEquatable<UpdateUserRequest>
     {
         /// <summary>
         /// Defines Language
@@ -240,16 +238,6 @@ namespace LogSentinel.Client.Model
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

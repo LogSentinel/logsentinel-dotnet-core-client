@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using LogSentinel.Client.Client;
 using LogSentinel.Client.Model;
 
@@ -528,7 +528,7 @@ namespace LogSentinel.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling GDPRRegisterApi->AddEntity");
 
-            var localVarPath = "/api/gdpr/addEntity";
+            var localVarPath = "./api/gdpr/addEntity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -582,7 +582,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
@@ -611,7 +611,7 @@ namespace LogSentinel.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling GDPRRegisterApi->AddEntity");
 
-            var localVarPath = "/api/gdpr/addEntity";
+            var localVarPath = "./api/gdpr/addEntity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -665,7 +665,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
@@ -693,7 +693,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->DeleteEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -739,7 +739,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRResponsibleEntity>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRResponsibleEntity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRResponsibleEntity)));
         }
 
@@ -768,7 +768,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->DeleteEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -814,7 +814,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRResponsibleEntity>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRResponsibleEntity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRResponsibleEntity)));
         }
 
@@ -842,7 +842,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->DeleteRecord");
 
-            var localVarPath = "/api/gdpr/record";
+            var localVarPath = "./api/gdpr/record";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -888,7 +888,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRRegisterRecord>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRRegisterRecord) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRegisterRecord)));
         }
 
@@ -917,7 +917,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->DeleteRecord");
 
-            var localVarPath = "/api/gdpr/record";
+            var localVarPath = "./api/gdpr/record";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -963,7 +963,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRRegisterRecord>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRRegisterRecord) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRegisterRecord)));
         }
 
@@ -986,7 +986,7 @@ namespace LogSentinel.Client.Api
         public ApiResponse< List<GDPRResponsibleEntity> > GdprEntitiesWithHttpInfo ()
         {
 
-            var localVarPath = "/api/gdpr/entities";
+            var localVarPath = "./api/gdpr/entities";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1031,7 +1031,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<GDPRResponsibleEntity>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<GDPRResponsibleEntity>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GDPRResponsibleEntity>)));
         }
 
@@ -1055,7 +1055,7 @@ namespace LogSentinel.Client.Api
         public async System.Threading.Tasks.Task<ApiResponse<List<GDPRResponsibleEntity>>> GdprEntitiesAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/api/gdpr/entities";
+            var localVarPath = "./api/gdpr/entities";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1100,7 +1100,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<GDPRResponsibleEntity>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<GDPRResponsibleEntity>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GDPRResponsibleEntity>)));
         }
 
@@ -1128,7 +1128,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->GetEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1174,7 +1174,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRResponsibleEntity>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRResponsibleEntity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRResponsibleEntity)));
         }
 
@@ -1203,7 +1203,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->GetEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1249,7 +1249,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRResponsibleEntity>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRResponsibleEntity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRResponsibleEntity)));
         }
 
@@ -1277,7 +1277,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->GetRecord");
 
-            var localVarPath = "/api/gdpr/record";
+            var localVarPath = "./api/gdpr/record";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1323,7 +1323,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRRegisterRecord>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRRegisterRecord) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRegisterRecord)));
         }
 
@@ -1352,7 +1352,7 @@ namespace LogSentinel.Client.Api
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling GDPRRegisterApi->GetRecord");
 
-            var localVarPath = "/api/gdpr/record";
+            var localVarPath = "./api/gdpr/record";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1398,7 +1398,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<GDPRRegisterRecord>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GDPRRegisterRecord) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRegisterRecord)));
         }
 
@@ -1428,7 +1428,7 @@ namespace LogSentinel.Client.Api
             if (role == null)
                 throw new ApiException(400, "Missing required parameter 'role' when calling GDPRRegisterApi->GetRecords");
 
-            var localVarPath = "/api/gdpr/records";
+            var localVarPath = "./api/gdpr/records";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1475,7 +1475,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<GDPRRegisterRecordDto>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<GDPRRegisterRecordDto>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GDPRRegisterRecordDto>)));
         }
 
@@ -1506,7 +1506,7 @@ namespace LogSentinel.Client.Api
             if (role == null)
                 throw new ApiException(400, "Missing required parameter 'role' when calling GDPRRegisterApi->GetRecords");
 
-            var localVarPath = "/api/gdpr/records";
+            var localVarPath = "./api/gdpr/records";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1553,7 +1553,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<List<GDPRRegisterRecordDto>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<GDPRRegisterRecordDto>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GDPRRegisterRecordDto>)));
         }
 
@@ -1581,7 +1581,7 @@ namespace LogSentinel.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling GDPRRegisterApi->SaveEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1635,7 +1635,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
@@ -1664,7 +1664,7 @@ namespace LogSentinel.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling GDPRRegisterApi->SaveEntity");
 
-            var localVarPath = "/api/gdpr/entity";
+            var localVarPath = "./api/gdpr/entity";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1718,7 +1718,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
@@ -1746,7 +1746,7 @@ namespace LogSentinel.Client.Api
             if (record == null)
                 throw new ApiException(400, "Missing required parameter 'record' when calling GDPRRegisterApi->SaveRecord");
 
-            var localVarPath = "/api/gdpr/saveRecord";
+            var localVarPath = "./api/gdpr/saveRecord";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1800,7 +1800,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
@@ -1829,7 +1829,7 @@ namespace LogSentinel.Client.Api
             if (record == null)
                 throw new ApiException(400, "Missing required parameter 'record' when calling GDPRRegisterApi->SaveRecord");
 
-            var localVarPath = "/api/gdpr/saveRecord";
+            var localVarPath = "./api/gdpr/saveRecord";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1883,7 +1883,7 @@ namespace LogSentinel.Client.Api
             }
 
             return new ApiResponse<Guid?>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Guid?) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
         }
 
