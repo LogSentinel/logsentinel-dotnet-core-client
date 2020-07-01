@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+  <metadata>
+    <id>LogSentintinel.DotNet.Client</id>
+    <version>1.0.0</version>
+    <title>LogSentinel .NET Client</title>
+    <authors>LogSentinel</authors>
+    <owners>Bozhidar Bozhanov</owners>
+    <licenseUrl>https://github.com/LogSentinel/logsentinel-dotnet-core-client/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/LogSentinel/logsentinel-dotnet-core-client/</projectUrl>
+    <iconUrl>https://d381qa7mgybj77.cloudfront.net/wp-content/uploads/elementor/thumbs/LogSentinel-Main-Color_Final-2-opewsgbbsb9azbzu7pw2pyxgmf5wq7r9s1fh5vgn0w.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LogSentinel API client for .NET</description>
+    <releaseNotes>1.0.0 release</releaseNotes>
+    <copyright>Copyright 2020 LogSentinel</copyright>
+    <tags>logsentinel logging</tags>
+    <dependencies>
+      <dependency id="FubarCoder.RestSharp.Portable.Core" version="4.0.7" />
+      <dependency id="FubarCoder.RestSharp.Portable.HttpClient" version="4.0.7" />
+      <dependency id="Newtonsoft.Jso" version="10.0.3" />
+      <dependency id="JsonSubTypes" version="1.2.0" />
+    </dependencies>
+    <summary>LogSentinel API client for .NET</summary>
+  </metadata>
+  <files>
+    <file src="Api\**" target="content\Models" />
+    <file src="Client\**" target="content\Views" />
+    <file src="Model\**" target="content\Helpers" />
+  </files>
+</package>
